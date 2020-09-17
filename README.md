@@ -1,1 +1,1 @@
-Original course: https://www.udemy.com/course/kubernetes-fast-track/
+repo with some deployments, yaml files from my tests with k8s
