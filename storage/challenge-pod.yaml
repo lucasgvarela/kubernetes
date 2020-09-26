@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypodnginx
+  labels:
+    name: mypodnginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+    volumeMounts:
+      - name: challenge-volume
+        mountPath: /var/www/html
+  volumes:
+    - name: challenge-volume
+      persistentVolumeClaim:
+        claimName: mypvc
